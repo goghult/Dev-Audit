@@ -4,9 +4,6 @@ server:
 spring:
   application:
     name: code-auditor
-  autoconfigure:
-    exclude:
-      - org.springframework.ai.model.google.genai.autoconfigure.chat.GoogleGenAiChatAutoConfiguration
   datasource:
     url: ${DB_URL:jdbc:postgresql://localhost:5432/code_auditor}
     username: ${DB_USERNAME:postgres}
