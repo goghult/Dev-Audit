@@ -157,7 +157,7 @@ public class AuditController {
                                 "color", "blue",
                                 "free", true,
                                 "description", "Fast, multimodal model with 1M token context"
-                        ),
+                        )
                 )
         ));
     }
