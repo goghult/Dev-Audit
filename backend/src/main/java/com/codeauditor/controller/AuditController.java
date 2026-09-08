@@ -158,15 +158,6 @@ public class AuditController {
                                 "free", true,
                                 "description", "Fast, multimodal model with 1M token context"
                         ),
-                        Map.of(
-                                "id", "ollama",
-                                "name", "Llama 3.2 (Ollama)",
-                                "model", "llama3.2",
-                                "badge", "Ollama",
-                                "color", "green",
-                                "free", true,
-                                "description", "Local model running through Ollama"
-                        )
                 )
         ));
     }

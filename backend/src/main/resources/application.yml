@@ -21,25 +21,10 @@ spring:
   ai:
     google:
       genai:
-        chat:
-          enabled: false
         api-key: ${GOOGLE_GEMINI_API_KEY:${GEMINI_API_KEY:${GOOGLE_API_KEY:}}}
         project-id: ${GOOGLE_CLOUD_PROJECT:233392738819}
         location: ${GOOGLE_CLOUD_LOCATION:us-central1}
-    openai:
-      # Ollama exposes an OpenAI-compatible endpoint locally.
-      base-url: ${OLLAMA_BASE_URL:http://localhost:11434}
-      api-key: ${OLLAMA_API_KEY:ollama}
-      chat:
-        options:
-          model: ${OLLAMA_MODEL:llama3.2}
-          temperature: 0.3
 
-ollama:
-  base-url: ${OLLAMA_BASE_URL:http://localhost:11434}
-  model: ${OLLAMA_MODEL:llama3.2}
-
-# Default AI provider: 'gemini' or 'groq'
 app:
   ai:
     default-provider: gemini

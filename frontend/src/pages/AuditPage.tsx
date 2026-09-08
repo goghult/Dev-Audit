@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Group as PanelGroup, Panel, Separator as PanelResizeHandle } from 'react-resizable-panels';
-import { Play, Square, Code, FileText, ChevronDown, Zap, Sparkles } from 'lucide-react';
+import { Play, Square, Code, FileText, ChevronDown, Sparkles } from 'lucide-react';
 import CodeEditor from '../components/CodeEditor';
 import ResultsPanel from '../components/ResultsPanel';
 import { useStreamingAnalysis } from '../hooks/useStreamingAnalysis';
@@ -23,17 +23,6 @@ const PROVIDERS = [
     ring: 'ring-blue-500/40',
     activeBg: 'bg-blue-500/15 border-blue-500/40 text-blue-300',
     inactiveBg: 'bg-bg-elevated border-border-default text-text-secondary hover:border-blue-500/30 hover:text-blue-300',
-  },
-  {
-    id: 'ollama',
-    name: 'Llama 3.2',
-    badge: 'Ollama',
-    icon: Zap,
-    tagline: 'Local · private',
-    gradient: 'from-emerald-500 to-teal-500',
-    ring: 'ring-emerald-500/40',
-    activeBg: 'bg-emerald-500/15 border-emerald-500/40 text-emerald-300',
-    inactiveBg: 'bg-bg-elevated border-border-default text-text-secondary hover:border-emerald-500/30 hover:text-emerald-300',
   },
 ] as const;
 
@@ -198,10 +187,7 @@ const AuditPage: React.FC = () => {
               disabled={!code.trim()}
               className={`text-white px-5 py-2 rounded-lg text-sm font-semibold flex items-center gap-2 transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed bg-gradient-to-r ${activeProvider.gradient} hover:opacity-90 shadow-accent-primary/20`}
             >
-              {provider === 'ollama'
-                ? <Zap className="h-4 w-4 fill-current" />
-                : <Sparkles className="h-4 w-4" />
-              }
+              <Sparkles className="h-4 w-4" />
               Analyze with {activeProvider.badge}
             </button>
           )}
