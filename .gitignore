@@ -1,0 +1,47 @@
+# ========================
+# Java / Spring Boot
+# ========================
+backend/target/
+backend/.mvn/
+backend/*.jar
+backend/*.war
+backend/*.class
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ========================
+# Node / React
+# ========================
+frontend/node_modules/
+frontend/dist/
+frontend/.cache/
+frontend/*.local
+frontend/*.tsbuildinfo
+
+# ========================
+# Environment & Secrets
+# ========================
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# ========================
+# Logs
+# ========================
+*.log
+logs/
