@@ -13,10 +13,18 @@ services:
     healthCheckPath: /api/audit/providers
     plan: free
     envVars:
-      - key: DB_URL
+      - key: DB_HOST
         fromDatabase:
           name: code-auditor-db
-          property: connectionString
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: code-auditor-db
+          property: port
+      - key: DB_NAME
+        fromDatabase:
+          name: code-auditor-db
+          property: database
       - key: DB_USERNAME
         fromDatabase:
           name: code-auditor-db
