@@ -86,6 +86,28 @@ The frontend starts on `http://localhost:5173`.
 
 Navigate to `http://localhost:5173` in your browser.
 
+## Deployment
+
+The Render Blueprint in `render.yaml` provisions the PostgreSQL database, Spring Boot backend, and Vite frontend.
+
+### Deploy both services on Render
+
+Create a new **Blueprint** in Render from this repository. It will create:
+
+- `code-auditor-db` — PostgreSQL
+- `code-auditor-backend` — Docker-based Spring Boot web service
+- `code-auditor-frontend` — Vite static site
+
+Set these environment variables in Render:
+
+- Backend `APP_FRONTEND_URL=https://<your-frontend-service>.onrender.com`
+- `DB_URL=<your-postgresql-connection-string>`
+- `JWT_SECRET_KEY=<a-random-base64-encoded-256-bit-secret>`
+- `GOOGLE_GEMINI_API_KEY=<your-gemini-api-key>`
+- Frontend `VITE_API_URL=https://<your-backend-service>.onrender.com/api`
+
+After setting the two public service URLs, redeploy both services. The frontend uses Render's rewrite rule so React Router routes work on refresh.
+
 ## Features
 
 - 🔐 **JWT Authentication** — Secure user registration and login

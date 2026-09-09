@@ -23,3 +23,17 @@ services:
         sync: false
       - key: GOOGLE_GEMINI_API_KEY
         sync: false
+
+  - type: static
+    name: code-auditor-frontend
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    plan: free
+    envVars:
+      - key: VITE_API_URL
+        sync: false
