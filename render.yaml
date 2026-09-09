@@ -24,8 +24,9 @@ services:
       - key: GOOGLE_GEMINI_API_KEY
         sync: false
 
-  - type: static
+  - type: web
     name: code-auditor-frontend
+    runtime: static
     rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: ./dist
