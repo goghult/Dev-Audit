@@ -40,5 +40,7 @@ public class AuthController {
             authenticationService.logout(userDetails.getUsername());
         }
         return ResponseEntity.ok().build();
+
+        #github
     }
 }
